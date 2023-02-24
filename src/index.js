@@ -19,6 +19,9 @@ function currentWeather(response) {
   weatherDescription.innerHTML = response.data.weather[0].description;
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `${response.data.wind.speed} km/h`;
+  let weatherIcon = document.querySelector("#weather-icon");
+  weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  console.log(response.data);
 }
 function findLocation(position) {
   let lat = position.coords.latitude;
@@ -64,6 +67,8 @@ function formatDate(currentDate) {
   let h2 = document.querySelector("h2");
   h2.innerHTML = `${day} ${hour}:${minutes}`;
 }
+
+let celsiusTemp = null;
 
 formatDate(new Date());
 
