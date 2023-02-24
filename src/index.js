@@ -15,6 +15,10 @@ function currentWeather(response) {
   tempDeg.innerHTML = currentTemp;
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
+  let weatherDescription = document.querySelector("#weather-description");
+  weatherDescription.innerHTML = response.data.weather[0].description;
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = `${response.data.wind.speed} km/h`;
 }
 function findLocation(position) {
   let lat = position.coords.latitude;
