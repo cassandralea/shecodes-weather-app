@@ -12,7 +12,7 @@ function currentPosition(event) {
 function currentWeather(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let tempDeg = document.querySelector("#temp-deg");
-  tempDeg.innerHTML = currentTemp;
+  tempDeg.innerHTML = `${currentTemp}°C`;
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
   let weatherDescription = document.querySelector("#weather-description");
@@ -21,8 +21,9 @@ function currentWeather(response) {
   windSpeed.innerHTML = `${response.data.wind.speed} km/h`;
   let weatherIcon = document.querySelector("#weather-icon");
   weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  console.log(response.data);
+  celsiusTemp = response.data.main.temp;
 }
+
 function findLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -68,12 +69,29 @@ function formatDate(currentDate) {
   h2.innerHTML = `${day} ${hour}:${minutes}`;
 }
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let fTemp = document.querySelector("#temp-deg");
+  fTemp.innerHTML = `${Math.round(celsiusTemp * 1.8 + 32)}°F`;
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let cTemp = document.querySelector("#temp-deg");
+  cTemp.innerHTML = `${Math.round(celsiusTemp)}°C`;
+}
+
 let celsiusTemp = null;
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", convertToFahrenheit);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", convertToCelsius);
 
 formatDate(new Date());
 
-// let fahrenheit = document.querySelector("#fahrenheit");
-// fahrenheit.addEventListener("click", fTemp);
+
 
 // function fTemp(event) {
 //   event.preventDefault();
@@ -85,8 +103,7 @@ formatDate(new Date());
 //   tempUnit.innerHTML = "F";
 // }
 
-// let celsius = document.querySelector("#celsius");
-// celsius.addEventListener("click", cTemp);
+
 
 // function cTemp(event) {
 //   event.preventDefault();
