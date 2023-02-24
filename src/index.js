@@ -43,6 +43,7 @@ function findCity(event) {
   axios.get(apiUrl).then(currentWeather);
 }
 
+
 function formatDate(currentDate) {
   let hour = currentDate.getHours();
   if (hour < 10) {
@@ -90,6 +91,8 @@ let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", convertToCelsius);
 
 formatDate(new Date());
+
+//findCity(Seattle);
 
 
 
