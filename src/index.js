@@ -9,6 +9,12 @@ function currentPosition(event) {
 	navigator.geolocation.getCurrentPosition(findLocation);
 }
 
+function getDailyForecast(coordinates) {
+	let apiKey = "64e5602de08f3631152c400a1c352055";
+	let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+	axios.get(apiUrl).then(forecastWeather);
+}
+
 function currentWeather(response) {
 	let currentTemp = Math.round(response.data.main.temp);
 	let tempDeg = document.querySelector("#temp-deg");
@@ -25,7 +31,7 @@ function currentWeather(response) {
 		`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 	);
 	celsiusTemp = response.data.main.temp;
-	forecastWeather();
+	getDailyForecast(response.data.coord);
 }
 
 function forecastWeather() {
