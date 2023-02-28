@@ -1,78 +1,58 @@
 * {
-  font-family: "Quicksand", sans-serif;
+	font-family: "Quicksand", sans-serif;
 }
 
 .city h1 {
-  font-size: 4.5em;
-  text-transform: uppercase;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-}
-
-.time h2 {
-  font-size: 1.5em;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-}
-
-.temp {
-  color: white;
-  font-size: 6em;
-  margin: 0;
-  padding: 0;
-  line-height: 1em;
-}
-
-.container {
-  text-align: center;
-  background-color: rgb(103, 201, 168);
+	font-size: 4.5em;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 0.05em;
 }
 
 .city {
-  margin: 50px auto 15px;
+	margin: 50px auto 15px;
 }
 
-.time {
-  margin-bottom: 50px;
+.container {
+	text-align: center;
+	background-color: rgb(103, 201, 168);
 }
 
 .current-location {
-  margin: 20px auto;
+	margin: 20px auto;
 }
 
 .current-weather {
-  height: 300px;
-  width: 300px;
-  margin: auto;
-  background-color: rgb(22, 18, 55);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.daily-weather {
-  margin: 40px 2em;
-}
-
-.daily-weather p {
-  font-size: 2em;
-  text-transform: uppercase;
-  font-weight: 600;
+	height: 300px;
+	width: 300px;
+	margin: auto;
+	background-color: rgb(22, 18, 55);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .footer {
-  padding-bottom: 40px;
+	padding-bottom: 40px;
+}
+
+.forecast-day {
+	text-align: center;
+}
+
+.forecast-icon {
+	width: 90%;
 }
 
 .icon {
-  font-size: 3em;
-  color: white;
+	font-size: 3em;
+	color: white;
 }
 
 .input-group {
-  width: 60%;
-  margin: 0 auto;
+	width: 60%;
+	margin: 0 auto;
 }
 
 /* .temp {
@@ -86,19 +66,37 @@
     width: 100%;
 } */
 
+.temp {
+	color: white;
+	font-size: 6em;
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+}
+
+.time {
+	margin-bottom: 50px;
+}
+
+.time h2 {
+	font-size: 1.5em;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+}
+
 .weather-app {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 5%;
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 5%;
 }
 
 #search-input {
-  background-color: white;
-  border: 1px solid white;
+	background-color: white;
+	border: 1px solid white;
 }
 
 #search-button {
-  background-color: white;
-  border: 1px solid white;
+	background-color: white;
+	border: 1px solid white;
 }
