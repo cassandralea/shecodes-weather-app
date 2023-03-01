@@ -46,8 +46,14 @@ function forecastWeather(response) {
   <div class="day col-2"><p class="forecast-day">${i.dt}</p>
               <img
               class="forecast-icon"
-              src="http://openweathermap.org/img/wn/${i.weather[0].icon}@2x.png" />
-              <p><span class="forecast-temp-high">${i.main.temp_max}°</span>&nbsp;|&nbsp;<span class="forecast-temp-low">${i.main.temp_min}°</span></p>
+              src="http://openweathermap.org/img/wn/${
+								i.weather[0].icon
+							}@2x.png" />
+              <p><span class="forecast-temp-high">${Math.round(
+								i.main.temp_max - 273.15
+							)}°</span>&nbsp;|&nbsp;<span class="forecast-temp-low">${Math.round(
+				i.main.temp_min - 273.15
+			)}°</span></p>
             </div>
 `;
 	});
