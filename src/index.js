@@ -11,7 +11,7 @@ function currentPosition(event) {
 
 function getDailyForecast(coordinates) {
 	let apiKey = "64e5602de08f3631152c400a1c352055";
-	let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+	let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&cnt=5&appid=${apiKey}`;
 	axios.get(apiUrl).then(forecastWeather);
 }
 
@@ -34,19 +34,20 @@ function currentWeather(response) {
 	getDailyForecast(response.data.coord);
 }
 
-function forecastWeather() {
+function forecastWeather(response) {
+	console.log(response.data);
 	let forecastElement = document.querySelector("#forecast");
 	let forecastWeatherHTML = `<div class="row">`;
-	let days = ["Thurs", "Fri", "Sat", "Sun"];
-	days.forEach(function (day) {
+	let forecast = response.data.list;
+	forecast.forEach(function (i) {
 		forecastWeatherHTML =
 			forecastWeatherHTML +
 			`
-  <div class="day col-2"><p class="forecast-day">${day}</p>
+  <div class="day col-2"><p class="forecast-day">${i.dt}</p>
               <img
               class="forecast-icon"
-              src="http://openweathermap.org/img/wn/10d@2x.png" />
-              <p><span class="forecast-temp-high">42°</span>&nbsp;|&nbsp;<span class="forecast-temp-low">32°</span></p>
+              src="http://openweathermap.org/img/wn/${i.weather[0].icon}@2x.png" />
+              <p><span class="forecast-temp-high">${i.main.temp_max}°</span>&nbsp;|&nbsp;<span class="forecast-temp-low">${i.main.temp_min}°</span></p>
             </div>
 `;
 	});
