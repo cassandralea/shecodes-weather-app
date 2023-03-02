@@ -82,7 +82,7 @@ function currentWeather(response) {
 	let weatherDescription = document.querySelector("#weather-description");
 	weatherDescription.innerHTML = response.data.weather[0].description;
 	let windSpeed = document.querySelector("#wind-speed");
-	windSpeed.innerHTML = `${response.data.wind.speed} km/h`;
+	windSpeed.innerHTML = `Wind Speed: ${response.data.wind.speed} km/h`;
 	let weatherIcon = document.querySelector("#weather-icon");
 	weatherIcon.setAttribute(
 		"src",

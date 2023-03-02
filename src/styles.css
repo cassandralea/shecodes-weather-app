@@ -23,14 +23,18 @@
 }
 
 .current-weather {
-	height: 300px;
-	width: 300px;
-	margin: auto;
+	height: 350px;
+	width: 350px;
+	margin: 20px auto 40px;
 	background-color: rgb(22, 18, 55);
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.daily-weather {
+	margin-bottom: 40px;
 }
 
 .footer {
@@ -99,4 +103,12 @@
 #search-button {
 	background-color: white;
 	border: 1px solid white;
+}
+
+#weather-description {
+	text-transform: capitalize;
+}
+
+#weather-icon {
+	width: 110%;
 }
