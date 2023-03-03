@@ -108,7 +108,3 @@
 #weather-description {
 	text-transform: capitalize;
 }
-
-#weather-icon {
-	width: 110%;
-}
