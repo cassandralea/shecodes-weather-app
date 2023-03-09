@@ -47,7 +47,7 @@ function displayForecast(response) {
 		forecastDay.dt
 	)}</p>
               <img
-              alt="${forecastDay.weather[0].description}
+              alt="${forecastDay.weather[0].description}"
               class="forecast-icon"
               src="https://openweathermap.org/img/wn/${
 								forecastDay.weather[0].icon
